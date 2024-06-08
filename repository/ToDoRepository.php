@@ -22,6 +22,12 @@ class ToDoRepositoryImpl implements ToDoRepository
 
     public function remove(int $number): bool
     {
+        if ($number > count($this->toDo) || $number < 1) {
+            return false;
+        }
+
+        array_splice($this->toDo, $number - 1, 1);
+
         return true;
     }
 
