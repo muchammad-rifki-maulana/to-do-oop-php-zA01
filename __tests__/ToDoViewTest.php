@@ -17,4 +17,12 @@ function testViewShowToDo(): void
     $toDoView->showToDo();
 }
 
-testViewShowToDo();
+function testViewAddToDo(): void
+{
+    $toDoView = new ToDoView(new ToDoServiceImpl(new ToDoRepositoryImpl()));
+
+    $toDoView->addToDo();
+    $toDoView->showToDo();
+}
+
+testViewAddToDo();
