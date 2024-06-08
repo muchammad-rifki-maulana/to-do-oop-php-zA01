@@ -43,6 +43,15 @@ class ToDoView
 
     public function addToDo(): void
     {
+        echo "\n- add -\n";
+        $toDo = InputHelper::input("to do (press 'x' to cancel)");
+        echo "\n";
+
+        if (strtolower($toDo) === "x") {
+            echo "- cancel add -\n\n";
+        } else {
+            $this->toDoService->addToDo($toDo);
+        }
     }
 
     public function removeToDo(): void
