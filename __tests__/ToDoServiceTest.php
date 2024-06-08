@@ -34,4 +34,30 @@ function testAddToDo(): void
     $toDoService->showToDo();
 }
 
-testAddToDo();
+function testRemoveToDo(): void
+{
+    $toDoService = new ToDoServiceImpl(new ToDoRepositoryImpl());
+
+    $toDoService->addToDo("a");
+    $toDoService->addToDo("b");
+    $toDoService->addToDo("c");
+    $toDoService->addToDo("d");
+    $toDoService->addToDo("e");
+
+    $toDoService->showToDo();
+
+    echo "==================================================\n";
+
+    $toDoService->removeToDo(-1);
+    $toDoService->removeToDo(0);
+    $toDoService->removeToDo(6);
+    $toDoService->removeToDo(3);
+    $toDoService->removeToDo(1);
+    $toDoService->removeToDo(3);
+
+    echo "==================================================\n";
+
+    $toDoService->showToDo();
+}
+
+testRemoveToDo();
