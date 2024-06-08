@@ -56,5 +56,16 @@ class ToDoView
 
     public function removeToDo(): void
     {
+        echo "\n- remove -\n";
+        $choice = InputHelper::input("number (press 'x' to cancel)");
+        echo "\n";
+
+        if (strtolower($choice) === "x") {
+            echo "- cancel remove -\n\n";
+        } else if ((int)$choice || $choice === "0") {
+            $this->toDoService->removeToDo($choice);
+        } else {
+            echo "- option not understood -\n\n";
+        }
     }
 }
