@@ -16,11 +16,22 @@ function testShowToDo(): void
     $toDoService->showToDo();
 
     // don't forget if you want to test $toDo make it public
-    $toDoRepository->toDo[] = new ToDo("a");
-    $toDoRepository->toDo[] = new ToDo("b");
-    $toDoRepository->toDo[] = new ToDo("c");
+    // $toDoRepository->toDo[] = new ToDo("a");
+    // $toDoRepository->toDo[] = new ToDo("b");
+    // $toDoRepository->toDo[] = new ToDo("c");
 
     $toDoService->showToDo();
 }
 
-testShowToDo();
+function testAddToDo(): void
+{
+    $toDoService = new ToDoServiceImpl(new ToDoRepositoryImpl());
+
+    $toDoService->addToDo("a");
+    $toDoService->addToDo("b");
+    $toDoService->addToDo("c");
+
+    $toDoService->showToDo();
+}
+
+testAddToDo();
