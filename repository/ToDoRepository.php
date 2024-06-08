@@ -17,6 +17,7 @@ class ToDoRepositoryImpl implements ToDoRepository
 
     public function save(ToDo $toDo): void
     {
+        $this->toDo[] = $toDo;
     }
 
     public function remove(int $number): bool
