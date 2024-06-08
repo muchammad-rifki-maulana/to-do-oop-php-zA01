@@ -2,6 +2,7 @@
 
 namespace Service;
 
+use Entity\ToDo;
 use Repository\ToDoRepository;
 
 interface ToDoService
@@ -32,6 +33,7 @@ class ToDoServiceImpl implements ToDoService
 
     public function addToDo(string $toDo): void
     {
+        $this->toDoRepository->save(new ToDo($toDo));
     }
 
     public function removeToDo(int $number): void
