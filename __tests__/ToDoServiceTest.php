@@ -30,7 +30,6 @@ function testAddToDo(): void
     $toDoService->addToDo("a");
     $toDoService->addToDo("b");
     $toDoService->addToDo("c");
-
     $toDoService->showToDo();
 }
 
@@ -43,7 +42,6 @@ function testRemoveToDo(): void
     $toDoService->addToDo("c");
     $toDoService->addToDo("d");
     $toDoService->addToDo("e");
-
     $toDoService->showToDo();
 
     echo "==================================================\n";
