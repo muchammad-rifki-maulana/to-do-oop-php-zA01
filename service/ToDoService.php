@@ -39,7 +39,6 @@ class ToDoServiceImpl implements ToDoService
     public function removeToDo(int $number): void
     {
         $success = $this->toDoRepository->remove($number);
-
         echo "- " . ($success ? "successfully" : "failed") . " remove to do number $number -\n\n";
     }
 }
