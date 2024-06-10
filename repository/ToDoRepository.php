@@ -27,7 +27,6 @@ class ToDoRepositoryImpl implements ToDoRepository
         }
 
         array_splice($this->toDo, $number - 1, 1);
-
         return true;
     }
 
