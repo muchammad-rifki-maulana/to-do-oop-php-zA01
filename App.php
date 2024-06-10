@@ -11,5 +11,4 @@ use Service\ToDoServiceImpl;
 use View\ToDoView;
 
 $toDo = new ToDoView(new ToDoServiceImpl(new ToDoRepositoryImpl()));
-
 $toDo->showToDo();
